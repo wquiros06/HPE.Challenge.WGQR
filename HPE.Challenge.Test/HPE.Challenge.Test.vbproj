@@ -155,13 +155,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Game\RockPaperScissors.vbproj">
+    <ProjectReference Include="..\RockPaperScissors\RockPaperScissors.vbproj">
       <Project>{1cdd040a-5aee-4c49-8f5c-7fb5fbda8467}</Project>
       <Name>RockPaperScissors</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HPE.Challenge.WGQR\HPE.Challenge.WGQR.vbproj">
-      <Project>{62d65479-f9e1-4565-8603-efaddf967d91}</Project>
-      <Name>HPE.Challenge.WGQR</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

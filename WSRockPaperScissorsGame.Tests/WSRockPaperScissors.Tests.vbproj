@@ -116,12 +116,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\WSRockPaperScissorsGame\WSRockPaperScissorsGame.vbproj">
-      <Project>{D0691EFE-B1A5-47F3-A6A6-8D90A0BBC8F8}</Project>
-      <Name>WSRockPaperScissorsGame</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
