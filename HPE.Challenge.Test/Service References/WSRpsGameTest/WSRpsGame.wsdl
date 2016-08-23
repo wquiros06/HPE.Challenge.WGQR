@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="playGame">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="game" type="tns:RPSGame" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="RPSGame">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="RESULT_MESAGGE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserOne" type="tns:RPSUser" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserTwo" type="tns:RPSUser" />
+          <s:element minOccurs="0" maxOccurs="1" name="Winner" type="tns:RPSUser" />
+          <s:element minOccurs="0" maxOccurs="1" name="Loser" type="tns:RPSUser" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RPSUser">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GameStrategy" type="tns:RPSGameStrategy" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RPSGameStrategy">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:ValidationAttribute">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="Strategy" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ValidationAttribute" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Attribute">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErrorMessageResourceName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ErrorMessageResourceType" type="tns:Type" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Attribute" abstract="true" />
+      <s:complexType name="Type" abstract="true">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:MemberInfo" />
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="MemberInfo" abstract="true" />
+      <s:element name="playGameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="playGameResult" type="tns:RPSGame" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="playTournament">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rounds" type="tns:ArrayOfRPSGame" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRPSGame">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RPSGame" nillable="true" type="tns:RPSGame" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="playTournamentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="playTournamentResult" type="tns:RPSGame" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="playGameSoapIn">
+    <wsdl:part name="parameters" element="tns:playGame" />
+  </wsdl:message>
+  <wsdl:message name="playGameSoapOut">
+    <wsdl:part name="parameters" element="tns:playGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="playTournamentSoapIn">
+    <wsdl:part name="parameters" element="tns:playTournament" />
+  </wsdl:message>
+  <wsdl:message name="playTournamentSoapOut">
+    <wsdl:part name="parameters" element="tns:playTournamentResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WSRpsGameSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="playGame">
+      <wsdl:input message="tns:playGameSoapIn" />
+      <wsdl:output message="tns:playGameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="playTournament">
+      <wsdl:input message="tns:playTournamentSoapIn" />
+      <wsdl:output message="tns:playTournamentSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSRpsGameSoap" type="tns:WSRpsGameSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="playGame">
+      <soap:operation soapAction="http://tempuri.org/playGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="playTournament">
+      <soap:operation soapAction="http://tempuri.org/playTournament" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSRpsGameSoap12" type="tns:WSRpsGameSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="playGame">
+      <soap12:operation soapAction="http://tempuri.org/playGame" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="playTournament">
+      <soap12:operation soapAction="http://tempuri.org/playTournament" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WSRpsGame">
+    <wsdl:port name="WSRpsGameSoap" binding="tns:WSRpsGameSoap">
+      <soap:address location="http://localhost:57028/Service/WSRpsGame.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WSRpsGameSoap12" binding="tns:WSRpsGameSoap12">
+      <soap12:address location="http://localhost:57028/Service/WSRpsGame.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

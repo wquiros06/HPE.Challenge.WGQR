@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{53CDACCD-FD8A-44F8-9C20-AB9A6246F95B}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{12330221-8414-4BEC-9FE3-A7C9029DA634}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\WSRockPaperScissors-WAWS-dev.json = PublishScripts\Configurations\WSRockPaperScissors-WAWS-dev.json
+		PublishScripts\Configurations\WSRockPaperScissorsGame-WAWS-dev.json = PublishScripts\Configurations\WSRockPaperScissorsGame-WAWS-dev.json
+		PublishScripts\Configurations\WSRPSGame-WAWS-dev.json = PublishScripts\Configurations\WSRPSGame-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HPE.Challenge.WGQR", "HPE.Challenge.WGQR\HPE.Challenge.WGQR.vbproj", "{62D65479-F9E1-4565-8603-EFADDF967D91}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HPE.Challenge.Test", "HPE.Challenge.Test\HPE.Challenge.Test.vbproj", "{62DB5B1E-2B0E-4BC7-AE73-18E906E76BB0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{62D65479-F9E1-4565-8603-EFADDF967D91} = {62D65479-F9E1-4565-8603-EFADDF967D91}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RockPaperScissors", "Game\RockPaperScissors.vbproj", "{1CDD040A-5AEE-4C49-8F5C-7FB5FBDA8467}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WSRockPaperScissorsGame", "WSRockPaperScissorsGame\WSRockPaperScissorsGame.vbproj", "{D0691EFE-B1A5-47F3-A6A6-8D90A0BBC8F8}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WSRockPaperScissorsGame.Tests", "WSRockPaperScissorsGame.Tests\WSRockPaperScissorsGame.Tests.vbproj", "{722BB829-B5F3-4733-A1AC-A8CF878DF354}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62D65479-F9E1-4565-8603-EFADDF967D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D65479-F9E1-4565-8603-EFADDF967D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D65479-F9E1-4565-8603-EFADDF967D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D65479-F9E1-4565-8603-EFADDF967D91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62DB5B1E-2B0E-4BC7-AE73-18E906E76BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62DB5B1E-2B0E-4BC7-AE73-18E906E76BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62DB5B1E-2B0E-4BC7-AE73-18E906E76BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62DB5B1E-2B0E-4BC7-AE73-18E906E76BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CDD040A-5AEE-4C49-8F5C-7FB5FBDA8467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CDD040A-5AEE-4C49-8F5C-7FB5FBDA8467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CDD040A-5AEE-4C49-8F5C-7FB5FBDA8467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CDD040A-5AEE-4C49-8F5C-7FB5FBDA8467}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0691EFE-B1A5-47F3-A6A6-8D90A0BBC8F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0691EFE-B1A5-47F3-A6A6-8D90A0BBC8F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0691EFE-B1A5-47F3-A6A6-8D90A0BBC8F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0691EFE-B1A5-47F3-A6A6-8D90A0BBC8F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{722BB829-B5F3-4733-A1AC-A8CF878DF354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{722BB829-B5F3-4733-A1AC-A8CF878DF354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{722BB829-B5F3-4733-A1AC-A8CF878DF354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{722BB829-B5F3-4733-A1AC-A8CF878DF354}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{12330221-8414-4BEC-9FE3-A7C9029DA634} = {53CDACCD-FD8A-44F8-9C20-AB9A6246F95B}
+	EndGlobalSection
+EndGlobal
