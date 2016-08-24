@@ -11,24 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishSc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{12330221-8414-4BEC-9FE3-A7C9029DA634}"
 	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\RPSGameManager-WAWS-dev.json = PublishScripts\Configurations\RPSGameManager-WAWS-dev.json
+		PublishScripts\Configurations\RSPGameManager-WAWS-dev.json = PublishScripts\Configurations\RSPGameManager-WAWS-dev.json
 		PublishScripts\Configurations\WSRockPaperScissors-WAWS-dev-2.json = PublishScripts\Configurations\WSRockPaperScissors-WAWS-dev-2.json
 		PublishScripts\Configurations\WSRockPaperScissors-WAWS-dev.json = PublishScripts\Configurations\WSRockPaperScissors-WAWS-dev.json
 		PublishScripts\Configurations\WSRockPaperScissorsGame-WAWS-dev.json = PublishScripts\Configurations\WSRockPaperScissorsGame-WAWS-dev.json
 		PublishScripts\Configurations\WSRPSGame-WAWS-dev.json = PublishScripts\Configurations\WSRPSGame-WAWS-dev.json
 	EndProjectSection
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HPE.Challenge.WGQR", "HPE.Challenge.WGQR\HPE.Challenge.WGQR.vbproj", "{62D65479-F9E1-4565-8603-EFADDF967D91}"
-EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "HPE.Challenge.Test", "HPE.Challenge.Test\HPE.Challenge.Test.vbproj", "{62DB5B1E-2B0E-4BC7-AE73-18E906E76BB0}"
-	ProjectSection(ProjectDependencies) = postProject
-		{62D65479-F9E1-4565-8603-EFADDF967D91} = {62D65479-F9E1-4565-8603-EFADDF967D91}
-	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RockPaperScissors", "RockPaperScissors\RockPaperScissors.vbproj", "{1CDD040A-5AEE-4C49-8F5C-7FB5FBDA8467}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WSRockPaperScissors.Tests", "WSRockPaperScissorsGame.Tests\WSRockPaperScissors.Tests.vbproj", "{722BB829-B5F3-4733-A1AC-A8CF878DF354}"
-EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "WSRockPaperScissors", "WSRockPaperScissors\WSRockPaperScissors.vbproj", "{4F098D9E-5DBA-462D-B0EE-77E3CB8F9784}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "RSPGameManager", "RSPGameManager\RSPGameManager.vbproj", "{F632D721-A518-4FF1-BE5B-8BDA2FBBC30C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,10 +31,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{62D65479-F9E1-4565-8603-EFADDF967D91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62D65479-F9E1-4565-8603-EFADDF967D91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62D65479-F9E1-4565-8603-EFADDF967D91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62D65479-F9E1-4565-8603-EFADDF967D91}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62DB5B1E-2B0E-4BC7-AE73-18E906E76BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62DB5B1E-2B0E-4BC7-AE73-18E906E76BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62DB5B1E-2B0E-4BC7-AE73-18E906E76BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,14 +39,10 @@ Global
 		{1CDD040A-5AEE-4C49-8F5C-7FB5FBDA8467}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CDD040A-5AEE-4C49-8F5C-7FB5FBDA8467}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CDD040A-5AEE-4C49-8F5C-7FB5FBDA8467}.Release|Any CPU.Build.0 = Release|Any CPU
-		{722BB829-B5F3-4733-A1AC-A8CF878DF354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{722BB829-B5F3-4733-A1AC-A8CF878DF354}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{722BB829-B5F3-4733-A1AC-A8CF878DF354}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{722BB829-B5F3-4733-A1AC-A8CF878DF354}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4F098D9E-5DBA-462D-B0EE-77E3CB8F9784}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4F098D9E-5DBA-462D-B0EE-77E3CB8F9784}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4F098D9E-5DBA-462D-B0EE-77E3CB8F9784}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4F098D9E-5DBA-462D-B0EE-77E3CB8F9784}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F632D721-A518-4FF1-BE5B-8BDA2FBBC30C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F632D721-A518-4FF1-BE5B-8BDA2FBBC30C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F632D721-A518-4FF1-BE5B-8BDA2FBBC30C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F632D721-A518-4FF1-BE5B-8BDA2FBBC30C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
