@@ -15,5 +15,17 @@ Public Module WebApiConfig
             routeTemplate:="api/{controller}/{id}",
             defaults:=New With {.id = RouteParameter.Optional}
         )
+
+        config.Routes.MapHttpRoute(
+            name:="DefaultApiTopSearch",
+            routeTemplate:="api/{controller}/{top}",
+            defaults:=New With {.id = RouteParameter.Optional}
+        )
+
+        config.Routes.MapHttpRoute(
+            name:="DefaultApiPlayGame",
+            routeTemplate:="api/{controller}/{playerOne}/{playerTwo}",
+            defaults:=New With {.id = RouteParameter.Optional}
+        )
     End Sub
 End Module

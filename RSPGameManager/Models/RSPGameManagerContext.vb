@@ -17,7 +17,6 @@ Namespace Models
         End Sub
     
         Public Property Players As System.Data.Entity.DbSet(Of Models.Player)
-        Public Property Games As System.Data.Entity.DbSet(Of RockPaperScissors.Game.Game)
     End Class
     
 End Namespace

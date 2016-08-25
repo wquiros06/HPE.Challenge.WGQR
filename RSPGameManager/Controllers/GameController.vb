@@ -1,30 +1,44 @@
 ﻿Imports System.Net
 Imports System.Web.Http
-Imports RockPaperScissors
+Imports System.Web.Http.Description
 
 Namespace Controllers
     Public Class GameController
         Inherits ApiController
 
+        Private playerOne As RockPaperScissors.Player.Player
+        Private playerTwo As RockPaperScissors.Player.Player
+
         ' GET: api/Game
-        Public Function GetValues() As IEnumerable(Of String)
-            Return New String() {"value1", "value2"}
+        Public Function GetValues() As IList(Of RockPaperScissors.Game.Game)
+            Return New List(Of RockPaperScissors.Game.Game)
         End Function
 
         ' GET: api/Game/5
-        Public Function GetValue(ByVal id As Integer) As String
-            Return "value"
+        Public Function GetValue(ByVal id As Integer) As RockPaperScissors.Game.Game
+            Return New RockPaperScissors.Game.Game(playerOne, playerTwo)
         End Function
 
         ' POST: api/Game
-        Public Sub PostValue(nombrePlayerOne As String, strategyPlayerOne As String, nombrePlayerTwo As String,
-                             strategyPlayerTwo As String)
-            Dim playerOne As New Player.CurrentPlayer(nombrePlayerOne, strategyPlayerOne)
-            Dim playerTwo As New Player.CurrentPlayer(nombrePlayerTwo, strategyPlayerTwo)
-            Dim game As New Game.Game(playerOne, playerTwo)
-            game.Play()
+        <ResponseType(GetType(RockPaperScissors.Player.Player))>
+        Public Function PostValue(<FromUri> playerOne As Models.Player, _
+                                  <FromUri> playerTwo As Models.Player) _
+                              As IHttpActionResult
+            'Public Function PostValue(<FromBody()> ByVal namePlayerOne As String, <FromBody()> ByVal strategyPlayerOne As String, _
+            '  <FromBody()> ByVal namePlayerTwo As String, <FromBody()> ByVal strategyPlayerTwo As String) _
 
-        End Sub
+            Dim thePlayerOne As New RockPaperScissors.Player.CurrentPlayer(playerOne.Name, playerOne.Strategy)
+            Dim thePlayerTwo As New RockPaperScissors.Player.CurrentPlayer(playerTwo.Name, playerTwo.Strategy)
+
+            Dim game As New RockPaperScissors.Game.Game(thePlayerOne, thePlayerOne)
+            Dim theGameWinner As RockPaperScissors.Player.CurrentPlayer = game.Play()
+            Dim winner As New Models.Player()
+            With winner
+                .Name = theGameWinner.Name
+                .Strategy = theGameWinner.Choose
+            End With
+            Return CreatedAtRoute("DefaultApi", New With {.id = theGameWinner.Name}, theGameWinner)
+        End Function
 
         ' PUT: api/Game/5
         Public Sub PutValue(ByVal id As Integer, <FromBody()> ByVal value As String)

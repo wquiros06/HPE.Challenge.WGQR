@@ -14,5 +14,17 @@ Public Module RouteConfig
             url:="{controller}/{action}/{id}",
             defaults:=New With {.controller = "Home", .action = "Index", .id = UrlParameter.Optional}
         )
+
+        routes.MapRoute(
+           name:="DefaultTopSearch",
+           url:="{controller}/{action}/{top}",
+           defaults:=New With {.controller = "Home", .action = "Index", .id = UrlParameter.Optional}
+       )
+
+        routes.MapRoute(
+          name:="DefaultPlayGame",
+          url:="{controller}/{action}/{playerOne}/{playerTwo}",
+          defaults:=New With {.controller = "Home", .action = "Index", .id = UrlParameter.Optional}
+      )
     End Sub
 End Module

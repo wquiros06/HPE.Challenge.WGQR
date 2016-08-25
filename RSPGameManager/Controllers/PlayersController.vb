@@ -31,10 +31,11 @@ Namespace Controllers
         End Function
 
         ' GET: api/Player/10
+        <ResponseType(GetType(Player))>
         Function GetTopPlayers(ByVal top As Integer) As IQueryable(Of Player)
             Dim theTopPlayers = (From thePlayer In db.Players
-                                 Order By thePlayer.Score Descending
-                                 Take top).AsQueryable()
+                                 Order By thePlayer.Score Descending).AsQueryable() _
+                                .Take(top).AsQueryable
             Return theTopPlayers
         End Function
 

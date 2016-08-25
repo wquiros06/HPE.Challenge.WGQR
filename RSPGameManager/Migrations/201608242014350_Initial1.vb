@@ -7,6 +7,10 @@ Namespace Migrations
         Inherits DbMigration
     
         Public Overrides Sub Up()
+            DropTable("dbo.Games")
+        End Sub
+        
+        Public Overrides Sub Down()
             CreateTable(
                 "dbo.Games",
                 Function(c) New With
@@ -15,10 +19,6 @@ Namespace Migrations
                     }) _
                 .PrimaryKey(Function(t) t.gameID)
             
-        End Sub
-        
-        Public Overrides Sub Down()
-            DropTable("dbo.Games")
         End Sub
     End Class
 End Namespace

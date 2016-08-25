@@ -1,6 +1,5 @@
 ﻿Namespace Game
     Public Class Game
-        Public Property gameID As Integer
         Private playerOne As Player.Player
         Private playerTwo As Player.Player
 

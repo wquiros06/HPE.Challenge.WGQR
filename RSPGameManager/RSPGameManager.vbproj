@@ -231,12 +231,11 @@
       <DependentUpon>201608240716337_Initial.vb</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201608240716337_Initial.vb" />
-    <Compile Include="Migrations\201608240853392_Initial1.Designer.vb">
-      <DependentUpon>201608240853392_Initial1.vb</DependentUpon>
+    <Compile Include="Migrations\201608242014350_Initial1.Designer.vb">
+      <DependentUpon>201608242014350_Initial1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201608240853392_Initial1.vb" />
+    <Compile Include="Migrations\201608242014350_Initial1.vb" />
     <Compile Include="Migrations\Configuration.vb" />
-    <Compile Include="Models\Game.vb" />
     <Compile Include="Models\Player.vb" />
     <Compile Include="Models\RSPGameManagerContext.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -261,8 +260,8 @@
     <EmbeddedResource Include="Migrations\201608240716337_Initial.resx">
       <DependentUpon>201608240716337_Initial.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608240853392_Initial1.resx">
-      <DependentUpon>201608240853392_Initial1.vb</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608242014350_Initial1.resx">
+      <DependentUpon>201608242014350_Initial1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -303,6 +302,8 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\PublishProfiles\RSPGameManager %282%29.pubxml" />
+    <None Include="My Project\PublishProfiles\RSPGameManager %283%29.pubxml" />
     <None Include="My Project\PublishProfiles\RSPGameManager.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -317,8 +318,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Scripts\knockout-3.4.0.debug.js" />
     <Content Include="Scripts\knockout-3.4.0.js" />
-    <Content Include="Views\Home\_TopChampions.vbhtml" />
-    <Content Include="Views\Home\_PlayGame.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
