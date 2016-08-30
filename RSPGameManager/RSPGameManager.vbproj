@@ -157,7 +157,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="My Project\PublishProfiles\" />
     <Folder Include="Properties\" />
     <Folder Include="Views\Game\" />
     <Folder Include="Views\Players\" />
@@ -271,6 +271,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\RSPGameManagerContext-20160824011022.mdf" />
+    <Content Include="App_Data\RSPGameManagerContext-20160824011022_log.ldf">
+      <DependentUpon>RSPGameManagerContext-20160824011022.mdf</DependentUpon>
+    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -302,9 +306,6 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
-    <None Include="My Project\PublishProfiles\RSPGameManager %282%29.pubxml" />
-    <None Include="My Project\PublishProfiles\RSPGameManager %283%29.pubxml" />
-    <None Include="My Project\PublishProfiles\RSPGameManager.pubxml" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
